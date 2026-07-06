@@ -14,6 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        User::factory()->create([
+            'name' => 'HR Admin',
+            'email' => 'admin@greativaconsulting.com',
+            'password' => bcrypt('password'), // or Hash::make('password') if Hash is imported, but bcrypt works
+        ]);
+
         JobPosting::create([
             'title' => 'Senior Frontend Developer',
             'department' => 'Engineering',

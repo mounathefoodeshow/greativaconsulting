@@ -21,9 +21,25 @@ const props = defineProps({
                         Greativa HR
                     </Link>
                 </div>
-                <Link :href="route('jobs.index')" class="text-sm font-medium text-gray-500 hover:text-indigo-600 transition-colors">
-                    &larr; Back to Jobs
-                </Link>
+                <div class="flex items-center space-x-6">
+                    <Link :href="route('jobs.index')" class="text-sm font-medium text-gray-500 hover:text-indigo-600 transition-colors">
+                        &larr; Back to Jobs
+                    </Link>
+                    <Link
+                        v-if="$page.props.auth.user"
+                        :href="route('dashboard')"
+                        class="text-sm font-medium text-gray-500 hover:text-indigo-600 transition-colors"
+                    >
+                        Dashboard
+                    </Link>
+                    <Link
+                        v-else
+                        :href="route('login')"
+                        class="text-sm font-medium text-gray-500 hover:text-indigo-600 transition-colors"
+                    >
+                        Admin Login
+                    </Link>
+                </div>
             </div>
         </header>
 

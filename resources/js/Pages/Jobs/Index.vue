@@ -35,8 +35,24 @@ watch([search, department, contractType], debounce(() => {
                         Greativa HR
                     </span>
                 </div>
-                <div class="text-sm font-medium text-gray-500 hover:text-indigo-600 cursor-pointer transition-colors duration-200">
-                    FR / EN
+                <div class="flex items-center space-x-6 text-sm font-medium">
+                    <div class="text-gray-500 hover:text-indigo-600 cursor-pointer transition-colors duration-200">
+                        FR / EN
+                    </div>
+                    <Link
+                        v-if="$page.props.auth.user"
+                        :href="route('dashboard')"
+                        class="text-gray-500 hover:text-indigo-600 transition-colors duration-200"
+                    >
+                        Dashboard
+                    </Link>
+                    <Link
+                        v-else
+                        :href="route('login')"
+                        class="text-gray-500 hover:text-indigo-600 transition-colors duration-200"
+                    >
+                        Admin Login
+                    </Link>
                 </div>
             </div>
         </header>
