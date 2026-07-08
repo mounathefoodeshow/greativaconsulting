@@ -41,10 +41,10 @@ watch([search, department, contractType], debounce(() => {
                     </div>
                     <Link
                         v-if="$page.props.auth.user"
-                        :href="route('dashboard')"
+                        :href="route('admin.jobs.index')"
                         class="text-gray-500 hover:text-indigo-600 transition-colors duration-200"
                     >
-                        Dashboard
+                        Manage Jobs
                     </Link>
                     <Link
                         v-else

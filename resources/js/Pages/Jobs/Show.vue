@@ -27,10 +27,10 @@ const props = defineProps({
                     </Link>
                     <Link
                         v-if="$page.props.auth.user"
-                        :href="route('dashboard')"
+                        :href="route('admin.jobs.index')"
                         class="text-sm font-medium text-gray-500 hover:text-indigo-600 transition-colors"
                     >
-                        Dashboard
+                        Manage Jobs
                     </Link>
                     <Link
                         v-else
